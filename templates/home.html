@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block name %}Home{% endblock name %}
+
+{% block content %}
+<div class="jumbotron" style="padding: 2rem 2rem; margin: auto; width: 700px; opacity: .95;">
+    <div class="align-items-center">
+            <form method="POST" action="{% url 'poll_view' %}">
+              {% csrf_token %}
+                <h2>Enter Email to start the Poll</h2>
+                    <table>
+                        {{ form.as_table }}
+                    </table>
+                <button class="btn btn-success ml-2" type="submit"> Submit</button>
+            </form>
+    </div>
+{% endblock content %}
